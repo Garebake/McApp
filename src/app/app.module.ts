@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { TesterComponent } from './tester/tester.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutComponent } from './about/about.component';
     NavComponent,
     TesterComponent,
     DashboardComponent,
-    AboutComponent
+    AboutComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
