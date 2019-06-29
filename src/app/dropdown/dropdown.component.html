@@ -3,6 +3,10 @@
 <div *ngFor='let dd of dropdownItem'>
   
   <div [ngStyle]="{'background-color': dd.color}">
-    <button>{{dd.name}}</button>
+    <button (click)=ShowHide()>{{dd.name}}</button>
+    <div *ngIf="!isCollapsed">
+      <p>it worked</p>
+    </div>
+    
   </div>
 </div>

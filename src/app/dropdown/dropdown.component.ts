@@ -7,6 +7,11 @@ import { DropdownItem } from '../Dropdown_items'
   styleUrls: ['./dropdown.component.css']
 })
 export class DropdownComponent implements OnInit {
+isCollapsed : boolean = true;
+ 
+ShowHide(){
+   this.isCollapsed = !this.isCollapsed;
+ }
 
   dropdownItem = DropdownItem
 
