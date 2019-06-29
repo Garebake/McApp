@@ -5,7 +5,11 @@
   <div [ngStyle]="{'background-color': dd.color}">
     <button (click)=ShowHide()>{{dd.name}}</button>
     <div *ngIf="!isCollapsed">
-      <p>it worked</p>
+      <ul>
+          <li *ngFor='let item of dd.Titles; let i = index' >
+              {{item}}{{dd.Value[i]}}
+          </li>
+      </ul>
     </div>
     
   </div>

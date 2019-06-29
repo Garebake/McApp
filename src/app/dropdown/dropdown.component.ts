@@ -8,7 +8,9 @@ import { DropdownItem } from '../Dropdown_items'
 })
 export class DropdownComponent implements OnInit {
 isCollapsed : boolean = true;
- 
+
+
+
 ShowHide(){
    this.isCollapsed = !this.isCollapsed;
  }
