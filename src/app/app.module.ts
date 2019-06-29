@@ -15,7 +15,7 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     NavComponent,
     TesterComponent,
-    DashboardComponent
+    DashboardComponent,
     AboutComponent
   ],
   imports: [
