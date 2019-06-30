@@ -10,6 +10,9 @@ export class DropdownComponent implements OnInit {
 isCollapsedAct : boolean = true;
 isCollapsedExp : boolean = true;
 
+isCollapsedActForm: boolean = true;
+isCollapsedExpForm: boolean = true;
+
 bool = false 
 
 ShowHideAct(){
@@ -20,6 +23,8 @@ ShowHideExp(){
   this.varibleArray[1] = !this.varibleArray[1];
 }
 
+varibleArray = [this.isCollapsedAct, this.isCollapsedExp]
+
 collapse(item){
   if (item == 0){
     this.ShowHideAct()
@@ -27,10 +32,32 @@ collapse(item){
   if(item == 1){
     this.ShowHideExp()
   }
-
 }
-varibleArray = [this.isCollapsedAct,
-this.isCollapsedExp]
+
+ShowHideActForm(){
+  this.formArray[0] = !this.formArray[0];  
+}
+
+ShowHideExpForm(){
+  this.formArray[1] = !this.formArray[1];
+}
+formArray = [ this.isCollapsedActForm, this.isCollapsedExpForm]
+
+Collapse_Form(item){
+  if (item == 0 ){
+    this.ShowHideActForm()
+  }
+  if (item == 1){
+    this.ShowHideExpForm()
+  }
+}
+
+
+
+
+
+
+
 
   dropdownItem = DropdownItem
 

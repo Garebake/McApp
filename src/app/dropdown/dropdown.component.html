@@ -10,6 +10,12 @@
               {{item}}{{dd.Value[i]}}
           </li>
       </ul>
+    <button (click)=Collapse_Form(j)>Add New</button>
+    <button>Edit Item</button>
+    <form *ngIf=!formArray[j]>
+      <p>test</p>
+    </form>
+    
     </div>
     
   </div>
