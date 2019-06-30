@@ -3,4 +3,5 @@ export class Dropdown{
     color: string;
     Titles: Array<string>;
     Value: Array<string>;
+
 }
