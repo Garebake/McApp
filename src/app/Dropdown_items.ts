@@ -1,20 +1,22 @@
 import {Dropdown} from './Dropdown'
-import { DropdownComponent} from './dropdown/dropdown.component';
+import {User} from './user'
 
+var x = User[0]
 
 export const DropdownItem: Dropdown[]=[
+    
     {
         name: 'Accounts',
         color: 'green',
-        Titles: ['Savings: ', 'Checking: ', 'Whatever: '],
-        Value: ['$0.00', '-$500.00', '0'],
+        Titles: x.astTitle,
+        Value: x.astValue,
 
     },
     {
         name: 'Expensives',
         color: 'red',
-        Titles:['Milk: ', 'All other groceries: '],
-        Value: ['$250.00', '$0.25'],
+        Titles:x.expTitle,
+        Value: x.expValue,
 
         
     }
