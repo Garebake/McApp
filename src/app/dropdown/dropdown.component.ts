@@ -15,6 +15,8 @@ isCollapsedExp : boolean = true;
 isCollapsedActForm: boolean = true;
 isCollapsedExpForm: boolean = true;
 
+
+
 bool = false 
 
 ShowHideAct(){
@@ -56,14 +58,20 @@ Collapse_Form(item){
 
 
 Append(item, itemtext, itemvalue){
-  if (item == 0 ){
-    this.user.astTitle.push(itemtext) 
-    this.user.astValue.push(itemvalue) 
+  if (isNaN(itemvalue)){
+    window.alert('Please enter a number')
   }
-  if (item == 1 ){
-    this.user.expTitle.push(itemtext) 
-    this.user.expValue.push(itemvalue) 
-  }
+  else{
+    if (item == 0 ){
+      this.user.astTitle.push(itemtext) 
+      this.user.astValue.push(itemvalue) 
+    }
+    if (item == 1 ){
+      this.user.expTitle.push(itemtext) 
+      this.user.expValue.push(itemvalue) 
+    }
+    this.Collapse_Form(item)
+}
 }
 
 

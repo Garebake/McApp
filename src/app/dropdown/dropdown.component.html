@@ -7,7 +7,7 @@
     <div *ngIf=!varibleArray[j]>
       <ul>
           <li *ngFor='let item of dd.Titles; let i = index' >
-              {{item}}{{dd.Value[i]}}
+              {{item}}: ${{dd.Value[i]}}
           </li>
       </ul>
     <button (click)=Collapse_Form(j)>Add New</button>
