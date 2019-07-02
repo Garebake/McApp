@@ -13,7 +13,9 @@
     <button (click)=Collapse_Form(j)>Add New</button>
     <button>Edit Item</button>
     <form *ngIf=!formArray[j]>
-      <p>test</p>
+      <input #itemtext type = 'text' name = 'itemtext' value = 'Name'/>
+      <input #itemvalue type = 'text' name = 'itemvalue' value = 'value'/>
+      <button type="button" (click)="Append(j, itemtext.value, itemvalue.value)">Submit</button><!-- I think button here-->
     </form>
     
     </div>

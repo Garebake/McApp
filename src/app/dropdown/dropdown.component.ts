@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DropdownItem } from '../Dropdown_items'
+import {User} from '../user'
+
 
 @Component({
   selector: 'app-dropdown',
@@ -53,10 +55,19 @@ Collapse_Form(item){
 }
 
 
+Append(item, itemtext, itemvalue){
+  if (item == 0 ){
+    this.user.astTitle.push(itemtext) 
+    this.user.astValue.push(itemvalue) 
+  }
+  if (item == 1 ){
+    this.user.expTitle.push(itemtext) 
+    this.user.expValue.push(itemvalue) 
+  }
+}
 
 
-
-
+   user = User[0]
 
 
   dropdownItem = DropdownItem
@@ -67,3 +78,4 @@ Collapse_Form(item){
   }
 
 }
+
