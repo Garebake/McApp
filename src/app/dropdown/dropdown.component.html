@@ -11,13 +11,22 @@
           </li>
       </ul>
     <button (click)=Collapse_Form(j)>Add New</button>
-    <button>Edit Item</button>
+    <button (click)=ShowHideEdit(j)>Edit Item</button>
     <form *ngIf=!formArray[j]>
       <input #itemtext type = 'text' name = 'itemtext' value = 'Name'/>
       <input #itemvalue type = 'text' name = 'itemvalue' value = 'value'/>
-      <button type="button" (click)="Append(j, itemtext.value, itemvalue.value)">Submit</button><!-- I think button here-->
+      <button type="button" (click)="Append(j, itemtext.value, itemvalue.value)">
+        Submit</button><!-- I think button here-->
     </form>
-    
+    <form *ngIf=!editArray[j]>
+      <select #combo>
+        <option *ngFor="let index of dd.Titles; let k = index" value = {{k}}>
+          {{index}}</option>
+      </select>
+      <input #itemvalue type = 'text' name = 'itemvalue' value = 'value'/>
+      <button type="button" (click)="Edit(j, combo.value, itemvalue.value)">Submit</button>
+
+    </form>
     </div>
     
   </div>

@@ -48,6 +48,7 @@ ShowHideExpForm(){
 formArray = [ this.isCollapsedActForm, this.isCollapsedExpForm]
 
 Collapse_Form(item){
+  this.editArray[item] = true;
   if (item == 0 ){
     this.ShowHideActForm()
   }
@@ -71,8 +72,42 @@ Append(item, itemtext, itemvalue){
       this.user.expValue.push(itemvalue) 
     }
     this.Collapse_Form(item)
+  }
 }
+
+// Edit bubble
+isCollapsedActEdit: boolean = true;
+isCollapsedExpEdit: boolean = true;
+editArray = [this.isCollapsedActEdit, this.isCollapsedExpEdit]
+
+// Make edit Collapse
+ShowHideEdit(item){
+  this.formArray[item] = true;
+  this.editArray[item] = !this.editArray[item];
 }
+
+// edid method
+Edit(item, combo, itemvalue){
+  if (isNaN(itemvalue)){
+    window.alert('Please enter a number')
+  }
+  else{
+
+    if (item == 0 ){
+      this.user.astValue[combo] = itemvalue;
+    }
+
+    if (item == 1 ){
+      this.user.expValue[combo] = itemvalue;
+    }
+
+    this.ShowHideEdit(item)
+  }
+  
+}
+
+
+
 
 
    user = User[0]
