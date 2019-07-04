@@ -106,7 +106,15 @@ Edit(item, combo, itemvalue){
   
 }
 
+Delete(item, combo){
+  if (item == 0 ){
+    this.user.astTitle.splice(combo,1);
+    this.user.astValue.splice(combo, 1);
+    window.alert(this.user.astTitle.length)
+  }
 
+  this.ShowHideEdit(item)
+}
 
 
 
