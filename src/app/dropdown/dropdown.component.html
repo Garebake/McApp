@@ -10,6 +10,7 @@
               {{item}}: ${{dd.Value[i]}}
           </li>
       </ul>
+      <p>Total :{{sum(j)}}</p>
     <button (click)=Collapse_Form(j)>Add New</button>
     <button (click)=ShowHideEdit(j)>Edit Item</button>
     <form *ngIf=!formArray[j]>

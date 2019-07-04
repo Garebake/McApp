@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DropdownItem } from '../Dropdown_items'
 import {User} from '../user'
+// import { totalmem } from 'os';
 
 
 @Component({
@@ -105,15 +106,32 @@ Edit(item, combo, itemvalue){
   }
   
 }
-
+// Delete button
 Delete(item, combo){
   if (item == 0 ){
     this.user.astTitle.splice(combo,1);
     this.user.astValue.splice(combo, 1);
-    window.alert(this.user.astTitle.length)
+  if (item == 1){
+    this.user.expTitle.splice(combo,1);
+    this.user.expTitle.splice(combo,1);
+  }
+    //window.alert(this.user.astTitle.length)
   }
 
   this.ShowHideEdit(item)
+}
+
+//Sum function
+
+public sum(item) {
+  var total = 0
+  if(item == 0){
+   this.user.astValue.forEach(x => total += x);
+  }
+  if (item == 1){
+    this.user.expValue.forEach(x => total += x);
+  }
+   return total;
 }
 
 
