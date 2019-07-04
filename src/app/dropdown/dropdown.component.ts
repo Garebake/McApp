@@ -10,6 +10,9 @@ import {User} from '../user'
   styleUrls: ['./dropdown.component.css']
 })
 export class DropdownComponent implements OnInit {
+
+user = User[0]
+
 isCollapsedAct : boolean = true;
 isCollapsedExp : boolean = true;
 
@@ -17,61 +20,29 @@ isCollapsedActForm: boolean = true;
 isCollapsedExpForm: boolean = true;
 
 
-
-bool = false 
-
-ShowHideAct(){
-   this.varibleArray[0] = !this.varibleArray[0];
- }
-
-ShowHideExp(){
-  this.varibleArray[1] = !this.varibleArray[1];
-}
-
 varibleArray = [this.isCollapsedAct, this.isCollapsedExp]
 
 collapse(item){
-  if (item == 0){
-    this.ShowHideAct()
-  }
-  if(item == 1){
-    this.ShowHideExp()
-  }
+this.varibleArray[item] = !this.varibleArray[item]
 }
 
-ShowHideActForm(){
-  this.formArray[0] = !this.formArray[0];  
-}
-
-ShowHideExpForm(){
-  this.formArray[1] = !this.formArray[1];
-}
 formArray = [ this.isCollapsedActForm, this.isCollapsedExpForm]
 
 Collapse_Form(item){
-  this.editArray[item] = true;
-  if (item == 0 ){
-    this.ShowHideActForm()
-  }
-  if (item == 1){
-    this.ShowHideExpForm()
-  }
+    this.editArray[item] = true;
+    this.formArray[item] = !this.formArray[item]
 }
 
+titleArray = [this.user.astTitle, this.user.expTitle]
+valueArray = [this.user.astValue, this.user.expValue]
 
 Append(item, itemtext, itemvalue){
   if (isNaN(itemvalue)){
     window.alert('Please enter a number')
   }
   else{
-    if (item == 0 ){
-      this.user.astTitle.push(itemtext) 
-      this.user.astValue.push(itemvalue) 
-    }
-    if (item == 1 ){
-      this.user.expTitle.push(itemtext) 
-      this.user.expValue.push(itemvalue) 
-    }
+    this.titleArray[item].push(itemtext)
+    this.valueArray[item].push(itemvalue)
     this.Collapse_Form(item)
   }
 }
@@ -93,31 +64,15 @@ Edit(item, combo, itemvalue){
     window.alert('Please enter a number')
   }
   else{
-
-    if (item == 0 ){
-      this.user.astValue[combo] = itemvalue;
-    }
-
-    if (item == 1 ){
-      this.user.expValue[combo] = itemvalue;
-    }
-
+    this.valueArray[item][combo] = itemvalue;
     this.ShowHideEdit(item)
   }
   
 }
 // Delete button
 Delete(item, combo){
-  if (item == 0 ){
-    this.user.astTitle.splice(combo,1);
-    this.user.astValue.splice(combo, 1);
-  if (item == 1){
-    this.user.expTitle.splice(combo,1);
-    this.user.expTitle.splice(combo,1);
-  }
-    //window.alert(this.user.astTitle.length)
-  }
-
+  this.valueArray[item].splice(combo,1);
+  this.titleArray[item].splice(combo,1);
   this.ShowHideEdit(item)
 }
 
@@ -125,18 +80,14 @@ Delete(item, combo){
 
 public sum(item) {
   var total = 0
-  if(item == 0){
-   this.user.astValue.forEach(x => total += x);
-  }
-  if (item == 1){
-    this.user.expValue.forEach(x => total += x);
-  }
+  this.valueArray[item].forEach(x => total += x);
+
    return total;
 }
 
 
 
-   user = User[0]
+ 
 
 
   dropdownItem = DropdownItem
