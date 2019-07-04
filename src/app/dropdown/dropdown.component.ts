@@ -42,7 +42,7 @@ Append(item, itemtext, itemvalue){
   }
   else{
     this.titleArray[item].push(itemtext)
-    this.valueArray[item].push(itemvalue)
+    this.valueArray[item].push(+itemvalue)
     this.Collapse_Form(item)
   }
 }
