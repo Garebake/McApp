@@ -1,0 +1,20 @@
+.edit_Block{
+    float: right;
+    margin: -5px;
+    padding: 0px;
+
+}
+
+.item{
+    margin: 20px;
+    padding: 20px;
+}
+
+.item:hover{
+    background-color: red
+}
+
+.dropdown{
+    margin:10px;
+}
+

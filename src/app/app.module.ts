@@ -9,6 +9,10 @@ import { TesterComponent } from './tester/tester.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownV2Component } from './dropdown-v2/dropdown-v2.component';
+import {MatExpansionModule, MatButtonModule,
+  MatCardModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,17 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     TesterComponent,
     DashboardComponent,
     AboutComponent,
-    DropdownComponent
+    DropdownComponent,
+    DropdownV2Component,
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatExpansionModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
