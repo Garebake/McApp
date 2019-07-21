@@ -1,18 +1,41 @@
 <h1>dropdown-v2 Bitches</h1>
 <mat-accordion>
-        <mat-expansion-panel  *ngFor="let dd of DropDownV2">
-            <mat-expansion-panel-header class=dropdown [ngStyle]="{'background-color': dd.color}">
+        <mat-expansion-panel  *ngFor="let dd of DropDownV2; let j = index">
+            <mat-expansion-panel-header class=dropdown 
+            [ngStyle]="{'background-color': dd.color}">
                 {{dd.name}}
             </mat-expansion-panel-header>
-            <div class=item *ngFor="let item of dd.Titles; let i = index">
+            <div 
+             class={{dd.color}}
+             *ngFor="let item of dd.Titles; let i = index">
                 
                     {{item}} : ${{dd.Value[i]}}
                 
                 <div class=edit_Block>
-                    <button >edit</button>
-                    <button mat-button>Delete</button>
+                    <input matInput #editValue type='number' placeholder="Value">
+                    <button mat-button (click)="edit(j,i,editValue.value)">
+                        edit
+                    </button>
+                    <button mat-button (click)="delete(j,i)">
+                        Delete
+                    </button>
                 </div>
-                
             </div>
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header
+                     [ngStyle]="{'background-color': 'gold'}">
+                        New
+                    </mat-expansion-panel-header>
+                    <div>
+                        <input matInput #title placeholder="Title">
+                        <input matInput #value type='number' placeholder="Value">
+                        <button mat-button (click)="Add(j, title.value, value.value)">
+                            Submit
+                        </button>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+            
         </mat-expansion-panel> 
 </mat-accordion>
