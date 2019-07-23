@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Account} from '../Account';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
+  i: number;
+  mytable: string;
 
-  constructor() { }
+  accounts = [
+    new Account('Checkings', 480),
+    new Account('Savings', 4000)
+  ];
 
-  ngOnInit() {
-  }
-
+  accountsTotal = this.accounts[0].balance + this.accounts[1].balance;
 }
