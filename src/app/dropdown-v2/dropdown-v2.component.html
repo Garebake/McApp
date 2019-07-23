@@ -9,7 +9,7 @@
              class={{dd.color}}
              *ngFor="let item of dd.Titles; let i = index">
                 
-                    {{item}} : ${{dd.Value[i]}}
+                    {{item}} : $${{dd.Value[i]}}
                 
                 <div class=edit_Block>
                     <input matInput #editValue type='number' placeholder="Value">
