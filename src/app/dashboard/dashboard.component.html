@@ -1,16 +1,35 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <div class="jumbotron">
     <h2>Current Balances</h2>
-    <form action="">
-        <button >Add Account</button>
-        <table>
+    <button id="addAccount" value="Click" (click)="addRow()">Add Account</button>
+    <!-- <table id="myTable">
+        <tr>
+            <td>Account Name</td>
+            <td>Account Balance</td>
+            <td>Total</td>
+        </tr>
+    </table> -->
+
+        
+
+        <ag-grid-angular 
+            style="width: 50%; height: 500px;" 
+            class="ag-theme-balham-dark"
+            [gridOptions]="gridOptions"
+            [defaultColDef]="defaultColDef"
+            [rowData]="rowData" 
+            [columnDefs]="columnDefs"
+        >
+        </ag-grid-angular>
+
+        <!-- <table>
             <tr id="headRow"n>
                 <th><div id="col1">Account Name</div></th>
                 <th><div id="col2">Current Balance</div></th>
                 <th><div id="col3">Total</div></th>
             </tr>
             <tr id="row">
-                <th>{{accounts[0].name}}</th>
+                <th><input type="text"></th>
                 <th>{{accounts[0].balance}}</th>
                 <th id="thirdCol"></th>
             </tr>
@@ -24,8 +43,7 @@
                     <th></th>
                     <th id="thirdCol">{{accountsTotal}}</th>
                 </tr>
-        </table>
-    </form>
+        </table> -->
 </div>
 
 
